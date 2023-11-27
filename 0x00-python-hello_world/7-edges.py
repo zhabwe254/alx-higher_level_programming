@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# This Python script manipulates a string
 
 word = "Holberton"
 word_first_3 = word[:3]

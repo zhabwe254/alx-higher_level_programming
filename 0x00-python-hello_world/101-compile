@@ -1,0 +1,11 @@
+#!/bin/bash
+# This script compiles a Python script file
+
+# Get the Python file name from the environment variable
+PYFILE="$PYFILE"
+
+# Compile the Python script
+python3 -m compileall $PYFILE
+
+# Print a message
+echo "Compiling $PYFILE ..."
