@@ -7,20 +7,8 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialization method with optional size and position."""
-        self.__size = size
-
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-
-        if size < 0:
-            raise ValueError("size must be >= 0")
-
-        self.__position = position
-
-        if not isinstance(position, tuple) or len(position) != 2 \
-                or not all(isinstance(coord, int) for coord in position) \
-                or any(coord < 0 for coord in position):
-            raise TypeError("position must be a tuple of 2 positive integers")
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -67,3 +55,17 @@ class Square:
 
             for _ in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
+
+    def __str__(self):
+        """Print the square with the character # and position."""
+        result = ""
+        if self.__size == 0:
+            result += "\n"
+        else:
+            for _ in range(self.__position[1]):
+                result += "\n"
+
+            for _ in range(self.__size):
+                result += " " * self.__position[0] + "#" * self.__size + "\n"
+
+        return result[:-1]
