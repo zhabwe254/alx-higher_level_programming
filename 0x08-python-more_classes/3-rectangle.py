@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Rectangle class with area and perimeter methods"""
+"""Rectangle class with area, perimeter, and string representation methods"""
 
 
 class Rectangle:
-    """Rectangle class with area and perimeter methods"""
+    """Rectangle class with area, perimeter, and string representation methods"""
     def __init__(self, width=0, height=0):
         """Initialize the rectangle with width and height"""
         self.width = width
@@ -44,3 +44,9 @@ class Rectangle:
     def perimeter(self):
         """Calculate the perimeter of the rectangle"""
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """Return a string representation of the rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join(["#" * self.__width for _ in range(self.__height)])
