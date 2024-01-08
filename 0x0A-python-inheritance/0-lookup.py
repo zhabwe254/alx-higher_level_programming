@@ -1,18 +1,7 @@
 #!/usr/bin/python3
-class Base():
-    """ My base class """
+"""Defines an object attribute lookup function."""
 
-    __nb_instances = 0
 
-    def __init__(self):
-        Base.__nb_instances += 1
-        self.id = Base.__nb_instances
-
-class User(Base):
-    """ My User class """
-
-    def __init__(self):
-        super().__init__()
-
-u = User()
-print(u.id)
+def lookup(obj):
+    """Return a list of an object's available attributes."""
+    return (dir(obj))
