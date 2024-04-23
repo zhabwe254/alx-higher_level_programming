@@ -2,13 +2,12 @@
 
 const fs = require('fs');
 
-const filePath = process.argv[2];
-const content = process.argv[3];
+const file = process.argv[3];
+const message = process.argv[4];
 
-fs.writeFile(filePath, content, { encoding: 'utf-8' }, (err) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log(`The file ${filePath} has been saved!`);
-});
+try {
+  fs.writeFileSync(file, message, 'utf8');
+  console.log(`"${message}" written to file ${file}`);
+} catch (err) {
+  console.error(err);
+}
